@@ -1,0 +1,8 @@
+.terraform
+terraform.tfstate
+.terraform.lock.hcl
+keypairname.pem
+
+terraform_ec2_key
+terraform_ec2_key.pub
+terraform.tfstate.backup
