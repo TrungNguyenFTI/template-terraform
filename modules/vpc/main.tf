@@ -134,7 +134,7 @@ resource "aws_security_group" "sg" {
 }
 
 resource "aws_security_group" "sg_private" {
-  name        = "vpc-sg-private"
+  name        = "vpc-sg-2"
   description = "VPC SG"
   vpc_id      = aws_vpc.vpc.id
 
@@ -143,7 +143,7 @@ resource "aws_security_group" "sg_private" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = [var.public_subnet[0]]
+    cidr_blocks = [var.vpc_cidr_block]
   }
 
   ingress {
@@ -151,7 +151,7 @@ resource "aws_security_group" "sg_private" {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = [var.public_subnet[0]]
+    cidr_blocks = [var.vpc_cidr_block]
   }
 
   egress {
